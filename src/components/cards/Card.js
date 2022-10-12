@@ -10,7 +10,6 @@ function Card({url}){
         <p>Architect and Engineer</p>
         </div>
 </>
-)
-    
+)    
 }
 export default Card
