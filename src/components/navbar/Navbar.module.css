@@ -1,7 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
-  
+  padding: 0;  
 }
 
 a {
@@ -34,7 +33,6 @@ nav {
     display: flex;
 }
 
-
 .navList li{
     letter-spacing: 3px;
     margin-left: 32px;
@@ -44,9 +42,6 @@ nav {
     display: block;
     cursor: pointer;
 }
-
-
-
 
 @media (max-width: 999px) {
     .navList {
@@ -69,13 +64,30 @@ nav {
       width: 32px;
       height: 2px;
       background: #fff;
-      margin: 8px;
-    }
-}
+      margin: 8px;  
+    }   
+    
+    
+   .navListActive {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vh;
+    height: 92vh;
+    background-color: #23232e;
+    flex-direction: column;
+    transform: translateX(0%);    
+   }
 
-.navListActive{
-    transform: translateX(0);
-}
+   .navListActive li {    
+    letter-spacing: 3px;
+    margin-left: 32px;
+    text-decoration: none;
+    list-style: none;
+   }
+   }
+
+
 
 
 
