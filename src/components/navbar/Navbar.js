@@ -1,31 +1,40 @@
-import style from './Navbar.module.css'
-import { useEffect, useState } from "react"
+import style from "./Navbar.module.css";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Home from "./../../pages/home/Home.js"
+import Fareonozoico from "./../../pages/farenozóico/Fareonozoico.js";
 
-function Navbar({url, nome}){    
+function Navbar({ url, nome }) {
+  const [menu, setMenu] = useState();
 
-    const[menu, setMenu] = useState()
+  return (
+    <header>
+      <nav>        
+        <ul className={menu ? style.navListActive : style.navList}>       
+            <li>
+              <Link to="/farenozóico">Farenozóico</Link>
+            </li>
+            <li>
+              <Link to="/proterozóico">Proterozóico</Link>
+            </li>
+            <li>
+              <Link to="/arqueano">Arqueano</Link>
+              </li>
+              <li>
+              <Link to="/hadeano">Hadeano</Link>
+              </li>                        
+          </ul>
+          <a className={style.logo} href="/">
+          <Link to="/">Dinossauria</Link>            
+          </a>         
 
-    return (        
-        <header>
-            <nav>           
-                <a className={style.logo} href='/'>Dinossauria</a>
-                <ul className={ menu ? style.navListActive : style.navList}>
-                    <li><a href='/'>Farenozóico</a></li>
-                    <li><a href='/'>Proterozóico</a></li>
-                    <li><a href='/'>Arqueano</a></li>
-                    <li><a href='/'>Hadeano</a></li>                    
-                </ul>                   
-                <div className={style.mobileMenu} >
-                <div className="line1" ></div>   
-                <div className="line2" ></div>   
-                <div className="line3" ></div>   
-                </div>                
-             </nav>
-        </header>  
-    )
-
-
-
-
+          <div className={style.mobileMenu}>
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>      
+      </nav>
+    </header>
+  );
 }
-export default Navbar
+export default Navbar;
