@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-// import Card from "./components/cards/Card";
-// import Form from "./components/form/Form";
+//import Card from "./components/cards/Card";
+//import Form from "./components/form/Form";
 // import ShowList from "./components/showList/ShowList";
 // import { useState } from "react";
 // import MyName from "./components/myName/MyName";
@@ -18,7 +18,7 @@ function App() {
   return (    
     <>   
     <Router>      
-    <Navbar></Navbar>  
+    <Navbar></Navbar>      
       <Routes>
         <Route exact path="/" element={<Home/>}> </Route>
         <Route path="/farenozoico" element={<Fareonozoico/>}> </Route>

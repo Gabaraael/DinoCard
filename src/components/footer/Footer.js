@@ -33,7 +33,6 @@ function Footer({ url, nome }) {
         <Link to="/rex"><GiDinosaurRex></GiDinosaurRex></Link>
         </li>
       </ul>
-
     </footer>
   );
 }

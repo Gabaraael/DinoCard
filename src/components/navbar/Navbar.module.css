@@ -5,7 +5,7 @@
 
 a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none;  
 }
 
 a:hover {
@@ -31,6 +31,7 @@ nav {
 .navList {
     list-style: none;
     display: flex;
+    width: 100vh;
 }
 
 .navList li{
