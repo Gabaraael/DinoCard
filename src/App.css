@@ -1,13 +1,11 @@
 .App {
   text-align: center;
   background-size: cover;
-   overflow-x: hidden;
+  overflow-x: hidden;
+  margin-bottom: 100px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-
-

@@ -1,8 +1,6 @@
 import style from "./Navbar.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Home from "./../../pages/home/Home.js"
-import Fareonozoico from "./../../pages/farenozóico/Fareonozoico.js";
 
 function Navbar({ url, nome }) {
   const [menu, setMenu] = useState();
@@ -12,10 +10,10 @@ function Navbar({ url, nome }) {
       <nav>        
         <ul className={menu ? style.navListActive : style.navList}>       
             <li>
-              <Link to="/farenozóico">Farenozóico</Link>
+              <Link to="/farenozoico">Farenozóico</Link>
             </li>
             <li>
-              <Link to="/proterozóico">Proterozóico</Link>
+              <Link to="/proterozoico">Proterozóico</Link>
             </li>
             <li>
               <Link to="/arqueano">Arqueano</Link>
