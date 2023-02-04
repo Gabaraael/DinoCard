@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 //import Card from "./components/cards/Card";
@@ -13,6 +14,7 @@ import Arqueano from "./pages/arqueano/Arqueano";
 import Hadeano from "./pages/hadeano/Hadeano";
 import Proterozoico from "./pages/proterozoico/Proterozoico";
 import Footer from "./components/footer/Footer";
+import Login from "./pages/login/Login";
 
 function App() {
   return (    
@@ -25,6 +27,7 @@ function App() {
         <Route path="/proterozoico" element={<Proterozoico/>}> </Route>
         <Route path="/arqueano" element={<Arqueano/>}> </Route>
         <Route path="/hadeano" element={<Hadeano/>}> </Route>
+        <Route path="/login" element={<Login/>}> </Route>
       </Routes>
       <Footer></Footer>
       

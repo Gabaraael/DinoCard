@@ -3,7 +3,7 @@ import { GiDimetrodon, GiDinosaurBones, GiDinosaurEgg, GiDinosaurRex } from "rea
 import style from "./Footer.module.css";
 import { Link } from "react-router-dom";
 
-function Footer({ url, nome }) {
+function Footer() {
   return (
     <footer>
       <ul className={style.navList}>
