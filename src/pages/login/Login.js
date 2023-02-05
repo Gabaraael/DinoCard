@@ -45,8 +45,8 @@ function Login() {
                     </button>
                   </div>
                   <p className="mt-2 d-flex justify-content-between">
-                    <p className={style.hyperlinkCard}  onClick={changeSignUp}> Registre-se</p>
-                    <a className={style.hyperlinkCard} onClick={changePassword}>Esqueceu a senha?</a>                 
+                    <a href="#/" className={style.hyperlinkCard}  onClick={changeSignUp}> Registre-se</a>
+                    <a href="#/" className={style.hyperlinkCard} onClick={changePassword}>Esqueceu a senha?</a>                 
                   </p>
                 </div>
               </form>
@@ -90,8 +90,8 @@ function Login() {
                 </button>
               </div>
               <p className="mt-2 d-flex justify-content-between">
-                <p className={style.hyperlinkCard}  onClick={changeSignin}> Login</p>
-                <a className={style.hyperlinkCard} onClick={changePassword}>Esqueceu a senha?</a>                 
+                <a href="#/" className={style.hyperlinkCard}  onClick={changeSignin}> Login</a>
+                <a href="#/" className={style.hyperlinkCard} onClick={changePassword}>Esqueceu a senha?</a>                 
               </p>
             </div>
           </form>
@@ -119,8 +119,8 @@ function Login() {
                   </button>
                 </div>
                 <p className="mt-2 d-flex justify-content-between">
-                  <p className={style.hyperlinkCard}  onClick={changeSignin}> Login</p>
-                  <p className={style.hyperlinkCard}  onClick={changeSignUp}> Registre-se</p>
+                  <a href="#/" className={style.hyperlinkCard}  onClick={changeSignin}> Login</a>
+                  <a href="#/" className={style.hyperlinkCard}  onClick={changeSignUp}> Registre-se</a>
                 </p>
               </div>
             </form>
