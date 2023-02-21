@@ -1,5 +1,4 @@
 import style from "./Navbar.module.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ url, nome }) {
@@ -22,9 +21,9 @@ function Navbar({ url, nome }) {
             <Link to="/hadeano">Hadeano</Link>
           </li>                   
         </ul>
-        <a className={style.logo}>
+        <h2 className={style.logo}>
           <Link to="/login">Login</Link>
-        </a>        
+        </h2>        
       </nav>
     </header>
   );

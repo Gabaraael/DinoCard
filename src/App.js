@@ -29,8 +29,7 @@ function App() {
         <Route path="/hadeano" element={<Hadeano/>}> </Route>
         <Route path="/login" element={<Login/>}> </Route>
       </Routes>
-      <Footer></Footer>
-      
+      <Footer></Footer>      
     </Router>
     </>
   );

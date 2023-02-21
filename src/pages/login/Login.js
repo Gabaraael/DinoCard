@@ -1,43 +1,48 @@
 import style from "./Login.module.css"
 import React, { useState } from "react"
+import { authLogin } from './../../services/authService.js';
+
 
 function Login() {
 
-    let [authMode, setAuthMode] = useState("signin")
+    let [authMode, setAuthMode] = useState("login")
+    
+    const [user, setUser] = useState({
+      username: "",
+      password: "",      
+    });
 
-    const changeSignUp = () => {
-      setAuthMode("signup")
+    function handleAuthenticationFlow(param) {
+      setAuthMode(param)
     }
 
-    const changeSignin = () => {
-      setAuthMode("signin")
-    }
-
-    const changePassword = () => {
-      setAuthMode("recoverPassword")
+    function login(e) {       
+      e.preventDefault();
+      authLogin(user).then((response) => {
+        console.log(response)
+      }).catch((error) => {
+        console.log(error)
+      });
     }
   
-    if (authMode === "signin") {
-        return (
-            <div className="Auth-form-container">
-              <form className="Auth-form">
+    if (authMode === "login") {
+        return (          
+            <div className={style.authFormContainer}>
+              <form className="Auth-form" onSubmit={login}>
                 <div className="Auth-form-content">
                   <h3 className="Auth-form-title">Entrar</h3>
                   <div className="form-group mt-3">
                     <label>Usuário </label>
                     <input
-                      type="email"
+                      type="text"
                       className="form-control mt-1"
                       placeholder=""
+                      onChange={(e) => setUser({ ...user, username: e.target.value })}
                     />
                   </div>
                   <div className="form-group mt-3">
                     <label>Senha</label>
-                    <input
-                      type="password"
-                      className="form-control mt-1"
-                      placeholder=""
-                    />
+                    <input type="password" className="form-control mt-1" placeholder="" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
                   </div>
                   <div className="d-grid gap-2 mt-3">
                     <button type="submit" className="btn btn-primary">
@@ -45,8 +50,8 @@ function Login() {
                     </button>
                   </div>
                   <p className="mt-2 d-flex justify-content-between">
-                    <a href="#/" className={style.hyperlinkCard}  onClick={changeSignUp}> Registre-se</a>
-                    <a href="#/" className={style.hyperlinkCard} onClick={changePassword}>Esqueceu a senha?</a>                 
+                    <a href="#/" className={style.hyperlinkCard}  onClick={() => handleAuthenticationFlow("register")}> Registre-se</a>
+                    <a href="#/" className={style.hyperlinkCard} onClick={() => handleAuthenticationFlow("forgotPassword")}>Esqueceu a senha?</a>                 
                   </p>
                 </div>
               </form>
@@ -54,7 +59,7 @@ function Login() {
           )   
     }
 
-    if (authMode === "signup") {    
+    if (authMode === "register") {    
     return (
         <div className="Auth-form-container">
           <form className="Auth-form">
@@ -90,8 +95,8 @@ function Login() {
                 </button>
               </div>
               <p className="mt-2 d-flex justify-content-between">
-                <a href="#/" className={style.hyperlinkCard}  onClick={changeSignin}> Login</a>
-                <a href="#/" className={style.hyperlinkCard} onClick={changePassword}>Esqueceu a senha?</a>                 
+                <a href="#/" className={style.hyperlinkCard}  onClick={() => handleAuthenticationFlow("login")}> Login</a>
+                <a href="#/" className={style.hyperlinkCard} onClick={() => handleAuthenticationFlow("forgotPassword")}>Esqueceu a senha?</a>                 
               </p>
             </div>
           </form>
@@ -99,7 +104,7 @@ function Login() {
       )
     }
 
-    if (authMode === "recoverPassword") {    
+    if (authMode === "forgotPassword") {    
       return (
           <div className="Auth-form-container">
             <form className="Auth-form">
@@ -119,8 +124,8 @@ function Login() {
                   </button>
                 </div>
                 <p className="mt-2 d-flex justify-content-between">
-                  <a href="#/" className={style.hyperlinkCard}  onClick={changeSignin}> Login</a>
-                  <a href="#/" className={style.hyperlinkCard}  onClick={changeSignUp}> Registre-se</a>
+                  <a href="#/" className={style.hyperlinkCard}  onClick={() => handleAuthenticationFlow("login")}> Login</a>
+                  <a href="#/" className={style.hyperlinkCard}  onClick={() => handleAuthenticationFlow("register")}> Registre-se</a>
                 </p>
               </div>
             </form>
