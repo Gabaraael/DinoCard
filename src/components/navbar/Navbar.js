@@ -1,8 +1,8 @@
 import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-function Navbar({ url, nome }) {
-  // const [menu, setMenu] = useState();
+function Navbar({isLoggedIn, username}) {
+
 
   return (
     <header>
@@ -21,9 +21,13 @@ function Navbar({ url, nome }) {
             <Link to="/hadeano">Hadeano</Link>
           </li>                   
         </ul>
-        <h2 className={style.logo}>
-          <Link to="/login">Login</Link>
+        {isLoggedIn ?
+         ( <h2 className={style.logo}>
+         <span>Olá, {username}!</span>
         </h2>        
+        ): 
+        <h2> <Link to="/login">Login</Link></h2>
+        }
       </nav>
     </header>
   );

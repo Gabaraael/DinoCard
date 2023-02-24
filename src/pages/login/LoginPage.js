@@ -1,9 +1,9 @@
 import style from "./Login.module.css"
 import React, { useState } from "react"
-import { authLogin } from './../../services/authService.js';
+import { authLogin } from '../../services/authService.js';
 
 
-function Login() {
+function LoginPage() {
 
     let [authMode, setAuthMode] = useState("login")
     
@@ -16,6 +16,7 @@ function Login() {
       setAuthMode(param)
     }
 
+    //Precisa implementar um serviço de login, e trabalhar em cima do Redux/ContextAPI do React.
     function login(e) {       
       e.preventDefault();
       authLogin(user).then((response) => {
@@ -135,4 +136,4 @@ function Login() {
       
 }
 
-export default Login 
+export default LoginPage 
